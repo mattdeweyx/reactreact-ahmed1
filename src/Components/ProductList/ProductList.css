@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background: #d5d5d5;
+  background: linear-gradient(180deg, #F0ECE5, #B6BBC4 60%);;
   padding: 20px;
 }
 
@@ -17,7 +17,7 @@
   width: 25%;
   padding: 20px;
   box-sizing: border-box;
-  background: #dcae30;
+  background: #161A30;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.15);
   margin-right: 20px;
@@ -26,6 +26,7 @@
 .PLsidebar h3 {
   margin-top: 0;
   margin-bottom: 20px;
+  color: #F0ECE5;
 }
 
 .PLsidebar input,
@@ -52,7 +53,7 @@
 }
 
 .allproduct-card {
-  background-color: white;
+  background-color: #F0ECE5;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -63,7 +64,7 @@
 
 .allproduct-card:hover {
   transform: translateY(-5px);
-  filter: drop-shadow(0px 10px 20px rgb(220, 174, 48,0.8)); /* Add drop shadow effect */
+  filter: drop-shadow(0px 10px 20px rgb(22, 26, 48,0.6)); /* Add drop shadow effect */
 }
 
 .productimg img {
@@ -95,12 +96,14 @@
   align-items: center;
   margin-left: 250px;
   
+  
 }
 
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 
 .pagination-button {
@@ -108,14 +111,14 @@
 }
 
 .pagination-button button {
-  background-color: #dcae30;
+  background-color: #F0ECE5 !important;
   border: none;
-  color: white;
+  color: #161A30 !important;
   padding: 8px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .pagination-button button:hover {
-  background-color: #b11616;
+  background-color: #161A30;
 }

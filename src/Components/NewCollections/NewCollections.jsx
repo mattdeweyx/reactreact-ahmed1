@@ -5,6 +5,7 @@ import { BASE_URL } from '../../config';
 import Rating from '../Rating/Rating';  // Make sure this is the correct path
 import FavoriteButton from '../FavoriteButton/FavoriteButton';  // Make sure this is the correct path
 
+
 const getBearerTokenFromCookies = () => {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; token=`);
@@ -42,6 +43,7 @@ const NewCollections = ({ newCollectionsProducts }) => {
     <div className='new-collections'>
       <h1>NEW COLLECTIONS</h1>
       <hr />
+      
       <div className="collections">
         {collections.length > 0 ? (
           collections.map(product => (

@@ -42,6 +42,7 @@ const Popular = ({ popularProducts }) => {
     <div className='popular'>
       <h1>POPULAR PRODUCTS</h1>
       <hr />
+      
       <div className="popular-item">
         {products.length > 0 ? (
           products.map(product => (

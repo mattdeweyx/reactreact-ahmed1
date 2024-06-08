@@ -17,7 +17,7 @@
 .loginsignup {
     width: 100%;
     min-height: 90vh;
-    background: linear-gradient(180deg, white, #d5d5d5 60%);
+    background: linear-gradient(180deg, #F0ECE5, #B6BBC4 60%);
     padding-top: 60px;
     padding-bottom: 20px;
 }
@@ -30,6 +30,7 @@
     padding: 30px 40px;
     box-sizing: border-box;
     border-radius: 10px;
+    filter: drop-shadow(0px 10px 20px rgb(48, 49, 77,0.3));
 }
 
 .loginsignup-fields {
@@ -68,7 +69,7 @@
     width: 100%;
     height: 60px;
     color: white;
-    background: black;;
+    background: #B6BBC4;;
     margin-top: 30px;
     border: none;
     font-size: 22px;
@@ -78,18 +79,18 @@
 }
 
 .loginsignup-container button:hover {
-    background: #dcae30;
+    background: #31304D;
 }
 
 .loginsignup-login {
     margin-top: 20px;
-    color: #5c5c5c;
+    color: #31304D;
     font-size: 16px;
     font-weight: 500;
 }
 
 .loginsignup-login span {
-    color: #dcae30;
+    color: #31304D;
     font-weight: 600;
 }
 
@@ -130,3 +131,45 @@
     }
 }
 
+.message {
+    position: fixed;
+    top: 60px; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 1000;
+    animation: slide-down-up 3s ease-in-out forwards;
+  }
+  
+  .success {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .error {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  @keyframes slide-down-up {
+    0% {
+      transform: translateY(-200%) translateX(-50%); /* Start off-screen */
+    }
+    20% {
+      transform: translateY(20px) translateX(-50%); /* Slide down to the adjusted position */
+    }
+    80% {
+      transform: translateY(20px) translateX(-50%); /* Stay in place */
+    }
+    100% {
+      transform: translateY(-200%) translateX(-50%); /* Slide back up off-screen */
+    }
+  }
+  
+  
+  
+  

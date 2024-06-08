@@ -85,7 +85,7 @@ const Navbar = () => {
         <Link to={isUserLoggedIn ? '/Userdashboard' : '/Login'}>
           <button className="button-52">{isUserLoggedIn ? 'Profile' : 'Login'}</button>
         </Link>
-        <Link to='/cart'><img src={cart_icon} alt="Cart" /></Link>
+        <Link to= {isUserLoggedIn?'/cart':'/Login' }><img src={cart_icon} alt="Cart" /></Link>
         <div className="nav-cart-count">{totalCartItems}</div>
       </div>
     </div>

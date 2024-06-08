@@ -11,18 +11,6 @@
     font-size: 40px;
     font-weight: 600;
 }
-.category-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-.category-heading hr {
-    flex: 1 1;
-    height: 5px;
-    background-color: black;
-    margin: 0 10px;
-    border: none;
-  }
 
 .relatedproducts-item {
     margin-top: 50px;

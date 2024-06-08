@@ -40,10 +40,10 @@ const RelatedProducts = ({ category }) => {
 
   return  (
     <div className='relatedproducts'>
-      <div className="category-heading">
-        <hr />  
-        <h1>RELATED PRODUCTS</h1>
+      <div className="category-heading" style={{marginTop:'60px'}}>
         <hr />
+        <h1 >RELATED PRODUCTS</h1>
+        <hr/>
       </div>
       <div className="relatedproducts-item">
         {products.slice(0, 6).map(product => (

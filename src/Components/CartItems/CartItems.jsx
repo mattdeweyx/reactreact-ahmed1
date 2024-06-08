@@ -7,7 +7,7 @@ import { BASE_URL } from '../../config';
 
 
 const CartItems = () => {
-  const { cartItems, removeFromCart, fetchTotalCartItems } = useContext(ShopContext);
+  const { cartItems, product,removeFromCart, fetchTotalCartItems } = useContext(ShopContext);
   const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState('');
   const [cartItemsData, setCartItemsData] = useState([]);

@@ -17,7 +17,7 @@ const CheckOrders = () => {
           headers: {
             'Content-Type': 'application/json',
             'ngrok-skip-browser-warning': 'true',
-            'Authorization': token, // Pass the token in the headers
+            'Authorization': token, 
           },
         });
         if (!response.ok) {
@@ -69,6 +69,8 @@ const CheckOrders = () => {
               <p>Product: {order.product.name}</p>
               <p>Quantity: {order.quantity}</p>
               <p>Total: {order.total}</p>
+              <div></div>
+              
               <button onClick={() => handleValidate(order.id)}>Validate</button>
             </div>
           ))

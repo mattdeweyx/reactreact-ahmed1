@@ -82,7 +82,7 @@ const ShopCategory = () => {
                   style={{ cursor: 'pointer' }}
                 >
                   <div className='productimg'>
-                    <img src={product.imageURL} alt={product.name} />
+                    <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
                     <hr style={{height:"1px ", backgroundColor:"black"}} />
                   </div>
                   <div className="product-details">

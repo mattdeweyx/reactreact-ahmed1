@@ -48,7 +48,7 @@ const Popular = ({ popularProducts }) => {
             <div className="popular-product-card" key={product.id}>
               <div className='productimg'>
                 <img
-                  src={product.imageURL}
+                  src={`${BASE_URL}${product.imageURL}`}
                   alt={product.name}
                   onClick={() => handleProductClick(product.id)}
                   style={{ cursor: 'pointer' }} // Indicate clickable image

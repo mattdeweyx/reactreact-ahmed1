@@ -49,7 +49,7 @@ const RelatedProducts = ({ category }) => {
         {products.slice(0, 6).map(product => (
           <div key={product.id} className="product-item">
             <Link to={`/product/${product.id}`} onClick={handleProductClick}>
-              <img src={product.imageURL} alt={product.name} />
+              <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
             </Link>
             <h2>{product.name}</h2>
             <p>{product.concentration}</p>

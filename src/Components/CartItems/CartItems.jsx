@@ -62,7 +62,7 @@ const CartItems = () => {
       {cartItemsData.map((item) => (
         <div key={item.id}>
           <div className="cartitems-format cartitems-format-main">
-            <img src={item.imageURL} alt="" className='carticon-product-icon' />
+            <img src={`${BASE_URL}${product.imageURL}`} alt="" className='carticon-product-icon' />
             <p>{item.name}</p>
             <p>${item.price}</p>
             <button className='cartitems-quantity'>{item.quantity}</button>

@@ -48,7 +48,7 @@ const NewCollections = ({ newCollectionsProducts }) => {
             <div className="collection-product-card" key={product.id}>
               <div className='productimg'>
                 <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
-                  <img src={product.imageURL} alt={product.name} />
+                  <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
                 </a>
               </div>
               <div className="collection-product-details">

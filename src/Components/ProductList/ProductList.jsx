@@ -116,7 +116,7 @@ const ProductList = () => {
               <div className="allproduct-card" key={product.id}>
                 <div className='productimg'>
                   <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
-                    <img src={product.imageURL} alt={product.name} />
+                    <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
                   </a>
                   <hr style={{height:"1px ", backgroundColor:"black"}} />
                 </div>

@@ -5,8 +5,7 @@ import Cookies from 'js-cookie';
 import './CSS/LoginSignup.css';
 import emailicon from '../Components/Assets/email-icon.png';
 import passwordicon from '../Components/Assets/password-icon.png';
-import { BASE_URL} from '../config';
-
+import { BASE_URL } from '../config';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,15 +15,15 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (success || error) {
+    if (success) {
       const timer = setTimeout(() => {
         setSuccess('');
-        setError('');
+        navigate('/'); // Navigate to the home page after the success message disappears
       }, 3000); // Hide after 3 seconds
 
       return () => clearTimeout(timer); // Cleanup the timeout on component unmount
     }
-  }, [success, error]);
+  }, [success, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -43,9 +42,6 @@ const Login = () => {
         Cookies.set('role', userData.role);
         setSuccess('Logged In Successfully!');
         setError('');
-
-        // Redirect immediately
-        window.location.href = '/';
       } else {
         setError(response.data.message || 'Login failed');
         console.error('Login failed:', response.data);

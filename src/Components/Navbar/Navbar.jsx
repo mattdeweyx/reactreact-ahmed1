@@ -41,7 +41,7 @@ const Navbar = () => {
       const response = await axios.post(`${BASE_URL}api/products/search`, { query: searchQuery }, { headers });
       if (response.status === 200) {
         console.log('Search successful:', response.data);
-        navigate('/productList', { state: { searchResults: response.data } });
+        navigate('/SearchResults', { state: { searchResults: response.data, searchQuery } });
       } else {
         console.error('Search failed:', response.data);
         setSearchError('An error occurred while processing your search.');
@@ -85,7 +85,7 @@ const Navbar = () => {
         <Link to={isUserLoggedIn ? '/Userdashboard' : '/Login'}>
           <button className="button-52">{isUserLoggedIn ? 'Profile' : 'Login'}</button>
         </Link>
-        <Link to= {isUserLoggedIn?'/cart':'/Login' }><img src={cart_icon} alt="Cart" /></Link>
+        <Link to={isUserLoggedIn ? '/cart' : '/Login'}><img src={cart_icon} alt="Cart" /></Link>
         <div className="nav-cart-count">{totalCartItems}</div>
       </div>
     </div>

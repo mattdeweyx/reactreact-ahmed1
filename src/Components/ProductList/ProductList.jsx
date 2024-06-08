@@ -4,7 +4,6 @@ import { BASE_URL, getBearerTokenFromCookies } from '../../config';
 import Product from '../../Pages/Product';
 import Rating from '../../Components/Rating/Rating';
 import FavoriteButton from '../../Components/FavoriteButton/FavoriteButton';
-import { useLocation } from 'react-router-dom';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +18,34 @@ const ProductList = () => {
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(6);
-  const location = useLocation();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${BASE_URL}api/products`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': getBearerTokenFromCookies(),
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error fetching products: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log('Fetched products:', data);
+        setProducts(data);
+        setFilteredProducts(data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let filtered = products;
@@ -50,14 +76,6 @@ const ProductList = () => {
     setFilteredProducts(filtered);
     setCurrentPage(1); // Reset to first page when filters change
   }, [filter, products]);
-
-  // Update products when location state changes (search results)
-  useEffect(() => {
-    if (location.state && location.state.searchResults) {
-      setProducts(location.state.searchResults);
-      setFilteredProducts(location.state.searchResults);
-    }
-  }, [location.state]);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -116,7 +134,7 @@ const ProductList = () => {
               <div className="allproduct-card" key={product.id}>
                 <div className='productimg'>
                   <a href={`/product/${product.id}`} onClick={() => handleProductClick(product)}>
-                    <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
+                    <img src={`${BASE_URL}${product.imageURL}`}alt={product.name} />
                   </a>
                   <hr style={{height:"1px ", backgroundColor:"black"}} />
                 </div>

@@ -2,14 +2,15 @@ import React, { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import market from '../Assets/market.png';
 import './ProductDisplay.css';
-import { BASE_URL } from '../../config';
-
+import { BASE_URL, getBearerTokenFromCookies } from '../../config';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDisplay = ({ product }) => {
   const { addToCart } = useContext(ShopContext);
   const [quantity, setQuantity] = useState(1);
   const [animationKey, setAnimationKey] = useState(0);
   const [messageVisible, setMessageVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setAnimationKey(prevKey => prevKey + 1);
@@ -35,7 +36,15 @@ const ProductDisplay = ({ product }) => {
     setMessageVisible(true);
     setTimeout(() => {
       setMessageVisible(false);
-    }, 1500); // Hide the message after 3 seconds
+    }, 1500); // Hide the message after 1.5 seconds
+  };
+
+  const handleAddToCartClick = () => {
+    if (getBearerTokenFromCookies()) {
+      handleAddToCart();
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
@@ -61,7 +70,7 @@ const ProductDisplay = ({ product }) => {
           <button onClick={handleIncrease}>+</button>
         </div>
 
-        <button onClick={handleAddToCart}>
+        <button onClick={handleAddToCartClick}>
           <img src={market} alt="" style={{ width: "20px" }} /> ADD TO CART
         </button>
       </div>

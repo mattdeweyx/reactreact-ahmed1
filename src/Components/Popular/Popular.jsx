@@ -58,9 +58,8 @@ const Popular = ({ popularProducts }) => {
               <div className="popular-product-details">
                 <h3>{product.name}</h3>
                 <p><span style={{ fontWeight: "bold" }}>Brand: </span>{product.brand}</p>
-                <p><span style={{ fontWeight: "bold" }}>Category: </span>{product.category}</p>
                 <p><span style={{ fontWeight: "bold" }}>Concentration: </span>{product.concentration}</p>
-                <p><span style={{ fontWeight: "bold" }}>Description: </span>{product.description}</p>
+                
                 <br />
                 <span style={{ fontWeight: "bold" }}>Price: </span><span style={{ fontWeight: "bolder" }}>{product.price} DZD</span>
                 <div className="rating-favorite-container">

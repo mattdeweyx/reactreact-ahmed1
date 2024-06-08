@@ -1,122 +1,211 @@
 /* General Styles */
 .userdashboard-container {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  display: flex;
+  
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Sidebar */
+.userdashboard-sidebar {
+  width: 250px;
+  padding: 20px;
+  background: #161A30;
+  border-radius: 10px;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.5);
+  opacity: 90%;
+  box-sizing: border-box;
+}
+
+.userdashboard-sidebar h2 {
+  margin-top: 0;
+  color: #F0ECE5;
+  margin-bottom: 30px;
+}
+
+.userdashboard-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 200px;
+}
+
+.userdashboard-sidebar li {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.userdashboard-sidebar a {
+  display: block;
+  padding: 10px;
+  color: #B6BBC4;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.userdashboard-sidebar a:hover {
+  color: #F0ECE5;
+}
+
+.userdashboard-sidebar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #B6BBC4;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.userdashboard-sidebar a:hover::after, .userdashboard-sidebar a.active::after {
+  transform: scaleX(1);
+}
+
+/* Main Content */
+.userdashboard-main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background: #B6BBC4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
+  margin-left: 20px;
+  opacity: 90%;
+  box-sizing: border-box;
+}
+
+.userdashboard-main-content h2 {
+  color: #161A30;
+  text-decoration: underline;
+  margin: 0 0 20px 0;
+}
+
+.userdashbcontainers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.userdashbcontainers input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.update-button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: #161A30;
+  color: #F0ECE5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+  background-color: #2a3154;
+}
+
+/* Update Form */
+.update-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.update-form {
+  background-color: #F0ECE5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.update-form h3 {
+  color: #161A30;
+  margin-top: 0;
+}
+
+.update-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.update-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #161A30;
+  color: #F0ECE5;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: #2a3154;
+}
+
+.form-actions button[type="button"] {
+  background-color: #B6BBC4;
+  color: #161A30;
+}
+
+.form-actions button[type="button"]:hover {
+  background-color: #a1a6af;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .userdashboard-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .userdashboard-sidebar {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
     margin-bottom: 20px;
   }
-  
-  /* Sidebar */
-  .userdashboard-sidebar {
-    width: 250px;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #161A30;
-    border-radius: 10px;
-    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.5);
-    opacity: 90%;
-  }
-  
-  .userdashboard-sidebar h2 {
-    margin-top: 0;
-    color: #F0ECE5;
-    margin-bottom: 30px;
-  }
-  
-  .userdashboard-sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .userdashboard-sidebar li {
-    margin-bottom: 300px;
-    position: relative;
-  }
-  
-  .userdashboard-sidebar a {
-    display: block;
-    padding: 10px;
-    color: #B6BBC4;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    font-weight: bold;
-  }
-  
-  .userdashboard-sidebar a:hover {
-    color: #F0ECE5;
-  }
-  
-  .userdashboard-sidebar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 5px;
-    width: 100%;
-    background-color: #B6BBC4;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  
-  .userdashboard-sidebar a:hover::after,
-  .userdashboard-sidebar a.active::after {
-    transform: scaleX(1);
-  }
-  
-  /* Main Content */
+
   .userdashboard-main-content {
-    flex-grow: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    background:#B6BBC4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
-    margin-left: 10px;
-    opacity: 90%;
+    margin-left: 0;
+    border-radius: 0 0 10px 10px;
   }
-  
-  .userdashboard-main-content h2 {
-    color: #161A30;
-    text-decoration: underline;
-    margin-left: 10px;
-  }
-  
-  .userdashbcontainers {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  
-  
-  
-  
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .userdashboard-container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .userdashboard-sidebar {
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-    }
-  
-    .userdashboard-main-content {
-      margin-left: 0;
-      border-radius: 0 0 10px 10px;
-    }
-  
-    .userdashbcontainers {
-      flex-direction: column;
-    }
-  }
-  
+}

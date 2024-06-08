@@ -1,4 +1,4 @@
-export const BASE_URL = "https://chimp-outgoing-steadily.ngrok-free.app/";
+export const BASE_URL = "https://bullfrog-fitting-rationally.ngrok-free.app/";
 
 
 export function getBearerTokenFromCookies() {

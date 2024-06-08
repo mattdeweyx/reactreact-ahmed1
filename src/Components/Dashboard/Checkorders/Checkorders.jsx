@@ -11,19 +11,26 @@ const CheckOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const token = getBearerTokenFromCookies(); // Get the token
-        const response = await fetch(`${BASE_URL}api/order`, {
+        const token = getBearerTokenFromCookies();
+        console.log('Token:', token);
+        console.log('Fetching orders from:', `${BASE_URL}api/orders`);
+        const response = await fetch(`${BASE_URL}api/orders`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
             'ngrok-skip-browser-warning': 'true',
-            'Authorization': token, 
+            'Authorization': token,
           },
         });
         if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}`);
+          if (response.status === 401) {
+            setError('Unauthorized access. Please log in again.');
+          } else {
+            throw new Error(`HTTP error ${response.status}`);
+          }
         }
         const data = await response.json();
+        console.log('Fetched data:', data);
         if (data.length > 0) {
           setOrders(data);
         } else {
@@ -66,11 +73,11 @@ const CheckOrders = () => {
         ) : (
           orders.map((order) => (
             <div key={order.id} className="order-card">
-              <p>Product: {order.product.name}</p>
-              <p>Quantity: {order.quantity}</p>
-              <p>Total: {order.total}</p>
-              <div></div>
-              
+              <p>Order ID: {order.order_id}</p>
+              <p>Address: {order.address}</p>
+              <p>Contact: {order.phone}</p>
+              <p>Total: {order.total_amount}</p>
+              <div>Status: {order.status}</div>
               <button onClick={() => handleValidate(order.id)}>Validate</button>
             </div>
           ))

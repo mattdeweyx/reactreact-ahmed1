@@ -38,7 +38,7 @@ const RelatedProducts = ({ category }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
+  return  (
     <div className='relatedproducts'>
       <div className="category-heading">
         <hr />  

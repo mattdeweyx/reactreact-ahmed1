@@ -30,7 +30,7 @@ const Myorders = ({ username }) => {
   
   const handleRemoveOrder = async orderId => {
     try {
-      // Call API to remove the order
+      
       await fetch(`/api/orders/${orderId}`, {
         method: 'DELETE',
       });
@@ -73,6 +73,7 @@ const Myorders = ({ username }) => {
                 <p>Product: {order.product}</p>
                 <p>Quantity: {order.quantity}</p>
                 <p>Total: {order.total}</p>
+                <button onClick={handleRemoveOrder}></button>
                 
               </div>
             ))}

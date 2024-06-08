@@ -3,7 +3,6 @@
     display: flex;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(180deg, white, #d5d5d5 60%);
     padding: 20px;
     margin-bottom: 20px;
   }
@@ -13,7 +12,7 @@
     width: 250px;
     padding: 20px;
     box-sizing: border-box;
-    background: #dcae30;
+    background: #161A30;
     border-radius: 10px;
     box-shadow: 0 16px 16px rgba(0, 0, 0, 0.5);
     opacity: 90%;
@@ -21,7 +20,7 @@
   
   .userdashboard-sidebar h2 {
     margin-top: 0;
-    color: black;
+    color: #F0ECE5;
     margin-bottom: 30px;
   }
   
@@ -39,7 +38,7 @@
   .userdashboard-sidebar a {
     display: block;
     padding: 10px;
-    color: black;
+    color: #B6BBC4;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -49,7 +48,7 @@
   }
   
   .userdashboard-sidebar a:hover {
-    color: white;
+    color: #F0ECE5;
   }
   
   .userdashboard-sidebar a::after {
@@ -59,7 +58,7 @@
     bottom: 0;
     height: 5px;
     width: 100%;
-    background-color: black;
+    background-color: #B6BBC4;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -75,7 +74,7 @@
     flex-grow: 1;
     padding: 20px;
     box-sizing: border-box;
-    background:white;
+    background:#B6BBC4;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
     margin-left: 10px;
@@ -83,7 +82,7 @@
   }
   
   .userdashboard-main-content h2 {
-    color: black;
+    color: #161A30;
     text-decoration: underline;
     margin-left: 10px;
   }

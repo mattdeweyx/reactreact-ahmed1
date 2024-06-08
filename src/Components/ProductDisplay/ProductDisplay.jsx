@@ -51,8 +51,9 @@ const ProductDisplay = ({ product }) => {
         <p>Brand: {product.brand}</p><br />
         <p>Category: {product.category}</p><br />
         <p>Concentration: {product.concentration}</p><br />
-        <p>Description: {product.description}</p><br />
-        <p style={{ fontWeight: "bold" }}>Price: {product.price} DZD</p>
+        <p>Description: </p><br />
+        <span>{product.description}</span><br />
+        <h2>Price: {product.price} DZD</h2>
 
         <div className="quantity-control">
           <button onClick={handleDecrease}>-</button>

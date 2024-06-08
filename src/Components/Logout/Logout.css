@@ -2,7 +2,7 @@
     display: block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: white;
+    background-color: #F0ECE5;
     color: black;
     border: none;
     border-radius: 5px;
@@ -16,7 +16,7 @@
   }
   
   .logoutbutton button:hover {
-    background-color: black;
+    background-color: #B6BBC4;
     color: white;
     width: 200px;
   }

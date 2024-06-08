@@ -18,22 +18,22 @@ function Perfumetypes() {
         <div className="perfume-item">
           <img src={pefumebottle1} alt="Perfume 1" />
           <hr />
-          <p>hello</p>
+          <p >Concentration of <br />Parfum</p>
         </div>
         <div className="perfume-item">
           <img src={pefumebottle2} alt="Perfume 2" />
           <hr />
-          <p>hello</p>
+          <p >Concentration of <br />Eau de Parfum</p>
         </div>
         <div className="perfume-item">
           <img src={pefumebottle3} alt="Perfume 3" />
           <hr />
-          <p>hello</p>
+          <p >Concentration of <br />Eau de Toilette</p>
         </div>
         <div className="perfume-item">
           <img src={pefumebottle4} alt="Perfume 4" />
           <hr />
-          <p>hello</p>
+          <p >Concentration of <br />Eau de Cologne</p>
         </div>
       </div>
     </div>

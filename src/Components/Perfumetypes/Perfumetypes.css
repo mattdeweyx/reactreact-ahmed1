@@ -3,9 +3,6 @@
   text-align: center;
 }
 
-
-
-
 .perfumetypes {
   display: flex;
   gap: 20px; /* Space between the items */
@@ -19,15 +16,18 @@
 }
 
 .perfume-item img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
 }
 
 .perfume-item hr {
-  width: 100%;
-  margin: 10px 0;
+  width: 50%;
+  height: 1vh ;
+  background-color: #161A30 ;
+  margin-top: -15px;
 }
 
 .perfume-item p {
-  margin: 0;
+  margin-top: 20px;
+  font-weight: bold;
 }

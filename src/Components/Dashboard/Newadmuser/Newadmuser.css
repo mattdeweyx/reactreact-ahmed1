@@ -23,7 +23,7 @@
     width: 250px;
     padding: 20px;
     box-sizing: border-box;
-    background: #dcae30;
+    background: #161A30;
     border-radius: 10px;
     box-shadow: 0 16px 16px rgba(0, 0, 0, 0.5);
     opacity: 90%;
@@ -49,7 +49,7 @@
 .newadmuser-sidebar a {
     display: block;
     padding: 10px;
-    color: black;
+    color: #B6BBC4;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -65,14 +65,14 @@
     bottom: 0;
     height: 5px;
     width: 100%;
-    background-color: black;
+    background-color: #B6BBC4;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
 }
 
 .newadmuser-sidebar a:hover {
-    color: white;
+    color: #F0ECE5;
 }
 
 .newadmuser-sidebar a:hover::after,
@@ -110,7 +110,7 @@
 }
 
 .addadmusercard {
-    background-color: #f5f5f5;
+    background-color: #F0ECE5;
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -168,16 +168,19 @@
 
 .addadmuserform button {
     padding: 10px 20px;
-    background-color: #b28a2d;
+    background-color: #161A30;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 .addadmuserform button:hover {
-    background-color: #8c6e21;
+    background-color: #B6BBC4;
+    color: #161A30;
+    filter: drop-shadow(0px 10px 15px rgba(22, 26, 48, 0.4));
 }
 
 .error-message {
@@ -212,7 +215,7 @@
 }
 
 .pagination button {
-    background-color: #b28a2d;
+    background-color: #B6BBC4;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -238,17 +241,20 @@
 }
 
 .add-button {
-    background-color: #b28a2d;
+    background-color: #161A30;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 .add-button:hover {
-    background-color: #8c6e21;
+    background-color: #F0ECE5;
+    color: #161A30;
+    filter: drop-shadow(0px 10px 15px rgba(22, 26, 48, 0.5));
 }
 
 @media (max-width: 768px) {

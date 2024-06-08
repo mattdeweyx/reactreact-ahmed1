@@ -1,0 +1,91 @@
+/* Styles for the new collections section */
+.new-collections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+/* Define the fade animation */
+@keyframes fadeInAnimation {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Styles for the heading of new collections */
+.new-collections h1 {
+  color: #171717;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/* Styles for the horizontal rule under the heading */
+.new-collections hr {
+  width: 150px;
+  height: 4px;
+  border-radius: 10px;
+  background: #252525;
+}
+
+/* Styles for the collection grid */
+.collections {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+/* Styles for individual collection product cards */
+.collection-product-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(20% - 20px); /* Adjust width to fit four cards in one row */
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+/* Styles for product images within collection cards */
+.productimg img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Additional styles for collection product details */
+.collection-product-details {
+  margin-top: 15px;
+}
+
+/* Styles for rating and favorite container */
+.rating-favorite-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .new-collections h1 {
+      font-size: 30px;
+  }
+
+  .new-collections hr {
+      width: 80px;
+      height: 4px;
+  }
+}

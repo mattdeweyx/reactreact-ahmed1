@@ -1,5 +1,5 @@
-export const BASE_URL = "https://chimp-outgoing-steadily.ngrok-free.app/";
-// const BASE_URL = 'http://localhost:3000/';
+export const BASE_URL = "https://bullfrog-fitting-rationally.ngrok-free.app/";
+
 
 export function getBearerTokenFromCookies() {
   const cookies = document.cookie.split(";");

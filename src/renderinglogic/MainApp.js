@@ -14,6 +14,7 @@ import ProductList from "../Components/ProductList/ProductList";
 import Favorite from "../Components/Favorite/Favorite";
 import Userdashboard from "../Components/Userdashboard/Userdashboard";
 import Myorders from "../Components/Userdashboard/Myorders/Myorders";
+import ThankYouPage from "../Components/ThankYouPage/ThankYouPage";
 import Rating from "../Components/Rating/Rating";
 import AdminLogin from "../Pages/AdminLogin";
 import FavoriteButton from "../Components/FavoriteButton/FavoriteButton";
@@ -52,6 +53,10 @@ function MainApp() {
             <Route
               path="/FavoriteButton"
               element={<FavoriteButton />}
+            />
+            <Route
+              path="/ThankYouPage"
+              element={<ThankYouPage />}
             />
             <Route
               path="/Rating"

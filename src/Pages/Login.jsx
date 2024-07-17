@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import Cookies from 'js-cookie'; // Import Cookies
+import { Link, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './CSS/LoginSignup.css';
 import emailicon from '../Components/Assets/email-icon.png';
 import passwordicon from '../Components/Assets/password-icon.png';
-import { BASE_URL, parseErrorMessage } from '../config';
-import Navbar from '../Components/Navbar/Navbar';
+import { BASE_URL } from '../config';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        setSuccess('');
+        navigate('/'); // Navigate to the home page after the success message disappears
+      }, 3000); // Hide after 3 seconds
+
+      return () => clearTimeout(timer); // Cleanup the timeout on component unmount
+    }
+  }, [success, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,18 +35,13 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        // Login successful
         const userData = response.data;
         console.log('Login successful:', userData);
 
-        // Store token in cookie
         Cookies.set('auth_token', userData.token);
         Cookies.set('role', userData.role);
         setSuccess('Logged In Successfully!');
         setError('');
-
-        // Redirect to user dashboard with user data
-        window.location.href = '/';
       } else {
         setError(response.data.message || 'Login failed');
         console.error('Login failed:', response.data);
@@ -79,11 +84,11 @@ const Login = () => {
             />
           </div>
           <button type="submit">Login</button>
-          {error && <p className="error">{error}</p>}
-          {success && <p className="success">{success}</p>}
         </form>
         <p className="loginsignup-login">Don't have an account? <span><Link to="/signup">Sign Up</Link></span></p>
       </div>
+      {error && <div className="message error">{error}</div>}
+      {success && <div className="message success">{success}</div>}
     </div>
   );
 };

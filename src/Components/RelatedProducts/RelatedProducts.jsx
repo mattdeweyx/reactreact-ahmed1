@@ -38,18 +38,16 @@ const RelatedProducts = ({ category }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  return (
+  return  (
     <div className='relatedproducts'>
-      <div className="category-heading">
-        <hr />  
-        <h1>RELATED PRODUCTS</h1>
-        <hr />
-      </div>
+        <h1 >RELATED PRODUCTS</h1>
+        <hr/>
+      
       <div className="relatedproducts-item">
         {products.slice(0, 6).map(product => (
           <div key={product.id} className="product-item">
             <Link to={`/product/${product.id}`} onClick={handleProductClick}>
-              <img src={product.imageURL} alt={product.name} />
+              <img src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
             </Link>
             <h2>{product.name}</h2>
             <p>{product.concentration}</p>

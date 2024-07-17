@@ -3,9 +3,11 @@ import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../Assets/cart_cross_icon.png';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../config';
+
 
 const CartItems = () => {
-  const { cartItems, removeFromCart, fetchTotalCartItems } = useContext(ShopContext);
+  const { cartItems, product,removeFromCart, fetchTotalCartItems } = useContext(ShopContext);
   const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState('');
   const [cartItemsData, setCartItemsData] = useState([]);
@@ -62,7 +64,7 @@ const CartItems = () => {
       {cartItemsData.map((item) => (
         <div key={item.id}>
           <div className="cartitems-format cartitems-format-main">
-            <img src={item.imageURL} alt="" className='carticon-product-icon' />
+            <img src={`${BASE_URL}${item.imageURL}`} alt="" className='carticon-product-icon' />
             <p>{item.name}</p>
             <p>${item.price}</p>
             <button className='cartitems-quantity'>{item.quantity}</button>

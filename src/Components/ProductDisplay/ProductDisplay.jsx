@@ -2,12 +2,15 @@ import React, { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
 import market from '../Assets/market.png';
 import './ProductDisplay.css';
+import { BASE_URL, getBearerTokenFromCookies } from '../../config';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDisplay = ({ product }) => {
   const { addToCart } = useContext(ShopContext);
   const [quantity, setQuantity] = useState(1);
   const [animationKey, setAnimationKey] = useState(0);
   const [messageVisible, setMessageVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setAnimationKey(prevKey => prevKey + 1);
@@ -33,7 +36,15 @@ const ProductDisplay = ({ product }) => {
     setMessageVisible(true);
     setTimeout(() => {
       setMessageVisible(false);
-    }, 1500); // Hide the message after 3 seconds
+    }, 1500); // Hide the message after 1.5 seconds
+  };
+
+  const handleAddToCartClick = () => {
+    if (getBearerTokenFromCookies()) {
+      handleAddToCart();
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
@@ -41,7 +52,7 @@ const ProductDisplay = ({ product }) => {
       {messageVisible && <div className="floating-message">Sent to cart!</div>}
       <div className="productdisplay-left">
         <div className="productdisplay-img">
-          <img className='productdisplay-main-img' src={product.imageURL} alt={product.name} />
+          <img className='productdisplay-main-img' src={`${BASE_URL}${product.imageURL}`} alt={product.name} />
         </div>
       </div>
       <div className="productdisplay-right">
@@ -49,8 +60,9 @@ const ProductDisplay = ({ product }) => {
         <p>Brand: {product.brand}</p><br />
         <p>Category: {product.category}</p><br />
         <p>Concentration: {product.concentration}</p><br />
-        <p>Description: {product.description}</p><br />
-        <p style={{ fontWeight: "bold" }}>Price: {product.price} DZD</p>
+        <p>Description: </p><br />
+        <span>{product.description}</span><br />
+        <h2>Price: {product.price} DZD</h2>
 
         <div className="quantity-control">
           <button onClick={handleDecrease}>-</button>
@@ -58,7 +70,7 @@ const ProductDisplay = ({ product }) => {
           <button onClick={handleIncrease}>+</button>
         </div>
 
-        <button onClick={handleAddToCart}>
+        <button onClick={handleAddToCartClick}>
           <img src={market} alt="" style={{ width: "20px" }} /> ADD TO CART
         </button>
       </div>

@@ -5,6 +5,7 @@ import NewCollections from '../Components/NewCollections/NewCollections';
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
 import './CSS/Shop.css'
 import Concentration from '../Components/Concentrationguide/Concentration';
+import Perfumetypes from '../Components/Perfumetypes/Perfumetypes';
 
 const Shop = () => {
   const newCollectionsRef = useRef(null);
@@ -38,7 +39,7 @@ const Shop = () => {
   return (
     <div>
       <Hero scrollToNewCollections={scrollToNewCollections} scrollTopopularproducts={scrollTopopularproducts} />
-      <Concentration/>
+      <Perfumetypes/>
       <div ref={popularproductsRef}>
         <Popular popularProducts={popularProducts} />
       </div>

@@ -1,0 +1,33 @@
+/* Perfumetypes.css */
+.container {
+  text-align: center;
+}
+
+.perfumetypes {
+  display: flex;
+  gap: 20px; /* Space between the items */
+}
+
+.perfume-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.perfume-item img {
+  max-width: 50%;
+  height: auto;
+}
+
+.perfume-item hr {
+  width: 50%;
+  height: 1vh ;
+  background-color: #161A30 ;
+  margin-top: -15px;
+}
+
+.perfume-item p {
+  margin-top: 20px;
+  font-weight: bold;
+}

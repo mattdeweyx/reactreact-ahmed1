@@ -1,5 +1,4 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './CheckoutForm.css';
 import { BASE_URL, getBearerTokenFromCookies } from '../../config';
 import React, { useContext, useRef, useState, useEffect } from 'react';
@@ -52,7 +51,7 @@ const CheckoutForm = () => {
         if (response.ok) {
           fetchTotalCartItems();
             clearCart();
-            navigate('/thank-you');
+            navigate('/ThankYouPage');
         } else {
             console.error('Error submitting form');
         }

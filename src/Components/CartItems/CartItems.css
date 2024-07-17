@@ -53,10 +53,10 @@
 .cartitems-total button{
     width: 220px;
     height: 50px;
-    outline: none;
+    border: none;
     border-radius: 75px;
-    background: black;
-    color: #fff;
+    background: #161A30;
+    color: #F0ECE5;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -67,7 +67,7 @@
     font-weight: 500;
 }
 .cartitems-promocode p{
-    color: #555;
+    color: #161A30;
 }
 .cartitems-promobox{
     display: flex;
@@ -91,10 +91,11 @@
     width: 130px;
     height: 100%;
     font-size: 16px;
-    background: black;
+    background: #161A30;
     color: white;
     cursor: pointer;
     border-radius: 75px;
+    border: none;
 }
 @media(max-width:1280px){
     .cartitems{
